@@ -12,12 +12,12 @@ async function getSurveyData () {
         `<tr>
             <td>${index + 1}</td>
             <td>${item.postcode}</td>
-            <td class="text-center">${item.survey_choice}</td>
+            <td class="text-center">${item.survey_choice == 'yes' ? '<p style="color: blue;">YES</p>' : '<p style="color: red;">NO</p>'}</td>
             <td>${item.email}</td>
             <td>${item.mobile_number}</td>
             <td><button type="button" data-survey-id="${item.survey_id}" class="btn btn-danger btn-sm delete"><i class="bi bi-trash"></i></button></td>
         </tr>`
-    )).join('') : `<tr><td class="text-center" colspan="5">No records found.</td></tr>`
+    )).join('') : `<tr><td class="text-center" colspan="5" style="color: green;">No records found.</td></tr>`
 
     document.getElementById('survey_table').innerHTML = data;
 
