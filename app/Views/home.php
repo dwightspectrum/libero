@@ -7,7 +7,6 @@
     <title>Libero</title>
     <link href="assets/img/libero.png" rel="icon">
     <link href="http://fonts.cdnfonts.com/css/brandon-grotesque-regular" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link href="assets/plugins/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
@@ -55,7 +54,7 @@
             <p style="font-weight: bolder; font-size: xxx-large;">How do you feel about recycling?</p>
             <div class="mx-5 pe-5">
               <div class="container">
-                <div class="fs-2">Postcode:</div>
+                <p class="fs-3">Postcode:</p>
                 <input type="text" class="modify-inputField form-control" id="postcode" name="postcode" style="width: 25%;" required />
                 <div class="mt-4">
                   <p class="fs-3">
@@ -90,7 +89,7 @@
             <div class="line"></div>
             <div class="card" id="image-background">
               <div class="card-body">
-                <h5 class="card-text text-center" style="padding-top: 40px;">Vestibulum sit amet tempor orci</h5>
+                <h5 class="card-text text-center" style="padding-top: 40px;">Vestibulum sit amet <br> tempor orci</h5><br>
                 <div>
                   <!-- <img src="" alt="" class="card-img"> -->
                   <a class="read-more" href="#">Read more >></a>
@@ -101,7 +100,7 @@
             <div class="line"></div>
             <div class="card" id="second-image">
               <div class="card-body">
-                <h5 class="card-text text-center" style="padding-top: 40px;">Integer consectetur <br>orci ligula</h5>
+                <h5 class="card-text text-center" style="padding-top: 40px;">Integer consectetur <br>orci ligula</h5><br>
                 <div>
                   <a class="read-more" href="#">Read more >></a>
                 </div>
@@ -120,9 +119,9 @@
             <h5 >Rutrum</h5>
             <div class="bottom-line"></div>
             <ul class="nav flex-column fs-5">
-              <li class="nav-item"><a href="#" class="nav-link p-0 text-black">Fermentum</a></li>
-              <li class="nav-item"><a href="#" class="nav-link p-0 text-black">Neque</a></li>
-              <li class="nav-item"><a href="#" class="nav-link p-0 text-black">Consequat</a></li>
+              <li class="nav-item"><a href="#" class="nav-link p-0 text-black"><h6>Fermentum</h6></a></li>
+              <li class="nav-item"><a href="#" class="nav-link p-0 text-black"><h6>Neque</h6></a></li>
+              <li class="nav-item"><a href="#" class="nav-link p-0 text-black"><h6>Consequat</h6></a></li>
             </ul>
           </div>
       
@@ -130,9 +129,9 @@
             <h5>Malesuada</h5>
             <div class="bottom-line"></div>
             <ul class="nav flex-column fs-5">
-              <li class="nav-item"><a href="#" class="nav-link p-0 text-black">Tellus</a></li>
-              <li class="nav-item"><a href="#" class="nav-link p-0 text-black">Condimentum</a></li>
-              <li class="nav-item"><a href="#" class="nav-link p-0 text-black">Consectetur</a></li>
+              <li class="nav-item"><a href="#" class="nav-link p-0 text-black"><h6>Tellus</h6></a></li>
+              <li class="nav-item"><a href="#" class="nav-link p-0 text-black"><h6>Condimentum</h6></a></li>
+              <li class="nav-item"><a href="#" class="nav-link p-0 text-black"><h6>Consectetur</h6></a></li>
             </ul>
           </div>
       
@@ -140,9 +139,9 @@
             <h5>Pellentesque</h5>
             <div class="bottom-line"></div>
             <ul class="nav flex-column fs-5">
-              <li class="nav-item"><a href="#" class="nav-link p-0 text-black">Habitant</a></li>
-              <li class="nav-item"><a href="#" class="nav-link p-0 text-black">Morbi</a></li>
-              <li class="nav-item"><a href="#" class="nav-link p-0 text-black">Tristique</a></li>
+              <li class="nav-item"><a href="#" class="nav-link p-0 text-black"><h6>Habitant</h6></a></li>
+              <li class="nav-item"><a href="#" class="nav-link p-0 text-black"><h6>Morbi</h6></a></li>
+              <li class="nav-item"><a href="#" class="nav-link p-0 text-black"><h6>Tristique</h6></a></li>
             </ul>
           </div>
 
@@ -150,9 +149,9 @@
             <h5>Quisque</h5>
             <div class="bottom-line"></div>
             <ul class="nav flex-column fs-5">
-              <li class="nav-item"><a href="#" class="nav-link p-0 text-black">Pharetra</a></li>
-              <li class="nav-item"><a href="#" class="nav-link p-0 text-black">Volutpat</a></li>
-              <li class="nav-item"><a href="#" class="nav-link p-0 text-black">Tristique</a></li>
+              <li class="nav-item"><a href="#" class="nav-link p-0 text-black"><h6>Pharetra</h6></a></li>
+              <li class="nav-item"><a href="#" class="nav-link p-0 text-black"><h6>Volutpat</h6></a></li>
+              <li class="nav-item"><a href="#" class="nav-link p-0 text-black"><h6>Tristique</h6></a></li>
             </ul>
           </div>
 
@@ -200,7 +199,7 @@ label {
   }
   .modify-inputField {
     border-radius: 25px;
-    height: 45px;
+    height: 50px;
     border: 3px solid #4077f2;
     color: #4077f2;
   }
@@ -209,7 +208,6 @@ label {
   } */
   .line {
     border-top: solid #4077f2 15px;
-    width: 15rem;
     margin-bottom: 10px;
   }
   .bottom-line {
@@ -234,12 +232,10 @@ label {
     background-color: #4077f2;
   }
   #image-background {
-    width: 15rem; 
     background: linear-gradient(rgb(129,130,126), rgba(0, 0, 0, 0.5)), url('assets/img/1b.jpeg');
     color: white;
   }
-  #second-image {
-    width: 15rem; 
+  #second-image { 
     background: linear-gradient(rgb(129,130,126), rgba(0, 0, 0, 0.5)), url('assets/img/1c.jpeg');
     color: white;
   }
@@ -310,8 +306,5 @@ label {
   right: 50%; margin-right: -25px;
   z-index: 9;
 }
-
-
-
 
 </style>

@@ -35,9 +35,13 @@ $routes->get('/', 'Home::index');
 $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'auth']);
 $routes->get('/member', 'Dashboard::member', ['filter' => 'auth']);
 $routes->get('/login', 'Login::index');
+$routes->get('/profile', 'Profile::index', ['filter' => 'auth']);
+$routes->get('/profile/(:num)', 'Profile::getUserId/$1');
+$routes->put('/profile/(:num)', 'Profile::update/$1');
 $routes->get('/register', 'Login::register');
 $routes->get('/logout', 'Login::logout');
 $routes->get('/survey', 'Survey::index', ['filter' => 'auth']);
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

@@ -9,7 +9,6 @@ document.getElementById(FORM).addEventListener('submit', async (e) => {
         body: form 
     });
     const data = await res.json();
-    console.log(data);
     if (data.success) {
         Swal.fire({
             icon: 'success',
@@ -27,5 +26,6 @@ document.getElementById(FORM).addEventListener('submit', async (e) => {
         })
     }
 });
+
 
 

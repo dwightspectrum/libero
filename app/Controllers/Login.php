@@ -37,7 +37,7 @@ class Login extends BaseController
             echo json_encode(array('success' => true, 'message' => 'Your account is successfully created!')); 
         }
     }
-
+    
     public function auth()
     {
         $session = session();
