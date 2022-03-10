@@ -1,11 +1,11 @@
 const changePass = 'change_pass';
 
-document.getElementById(changePass).addEventListener('submit', async (e) => {
+document.getElementById(changePass)?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const form = new FormData();
+    const form = new FormData(e.target);
 
-    const res = await fetch(`Profile/change_pass`, {
+    const res = await fetch(`Profile/change_pass/${user.user_id}`, {
         method: 'POST',
         body: form
     });

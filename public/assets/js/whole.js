@@ -32,7 +32,7 @@ async function getProfile() {
 
 const editForm = 'edit_profile';
 
-document.getElementById(editForm).addEventListener('submit', async (e) => {
+document.getElementById(editForm)?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const form = new FormData(e.target);

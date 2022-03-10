@@ -41,28 +41,24 @@ class Profile extends BaseController
     public function change_pass() {
         $user_id = session('user_id');
         $user = new UserModel();
-        $user->where('user_id', $user_id);
 
         $currentPass = $this->request->getVar('user_password');
         $newPass = $this->request->getVar('new_password');
-        $confimPass = $this->request->getVar('confirm_password');
+        $confirmPass = $this->request->getVar('confirm_password');
 
-        if (!password_verify($currentPass, $user->user_password)) {
-            $data["success"] = false;
-            $data["error"] = "Current Password is incorrect.";
-        }
-        else if ($newPass != $confimPass) {
-            $data["success"] = false;
-            $data["error"] = "New password and confirm new password doesn't match.";
-        }
-        else {
-            $user->update($user_id, password_hash($newPass, PASSWORD_DEFAULT));
-            $data["success"] = true;
-        }
+        $data = $user->where('user_id', $user_id)->first();
+        
+        $oldPass = $data['user_password'];
 
+        if(password_verify($oldPass, $currentPass) && $newPass == $confirmPass) {
+            $user->update(password_hash($newPass, PASSWORD_DEFAULT));
+        }
+        
         echo json_encode([
             'success' => true,
-            'message' => 'Your password is successfully changed!'
-        ]);
+            'message' => 'Your account is successfully updated!'
+        ]);        
+        
+    
     }
 }
