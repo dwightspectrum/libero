@@ -111,12 +111,12 @@
 
                 <div class="tab-pane fade pt-3" id="profile-change-password">
                   <!-- Change Password Form -->
-                  <form id="change_pass" method="POST">
+                  <form id="change_password" method="POST">
 
                     <div class="row mb-3">
                       <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="user_password" type="password" class="form-control" id="user_password">
+                        <input name="password" type="password" class="form-control" id="password">
                       </div>
                     </div>
 
@@ -150,6 +150,6 @@
       </div>
     </section>
     <script>
-      const user = <?=json_encode($sessData) ?>
+      const user = <?=json_encode($sessData) ?>;
     </script>
     <script type="module" src="assets/js/profile.js?v=1.0"></script>

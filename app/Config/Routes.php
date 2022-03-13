@@ -38,6 +38,7 @@ $routes->get('/login', 'Login::index');
 $routes->get('/profile', 'Profile::index', ['filter' => 'auth']);
 $routes->get('/profile/(:num)', 'Profile::getUserId/$1');
 $routes->put('/profile/(:num)', 'Profile::update/$1');
+$routes->post('/profile/(:num)', 'Profile::change_pass/$1');
 $routes->get('/register', 'Login::register');
 $routes->get('/logout', 'Login::logout');
 $routes->get('/survey', 'Survey::index', ['filter' => 'auth']);

@@ -10,6 +10,7 @@ class Profile extends BaseController
         $session = session();
         $data['sessData'] = $session->get();
 
+
         return $this->loadView('profile', $data);
     
     }
@@ -42,18 +43,33 @@ class Profile extends BaseController
         $user_id = session('user_id');
         $user = new UserModel();
 
-        $currentPass = $this->request->getVar('user_password');
+        $currentPass = $this->request->getVar('password');
         $newPass = $this->request->getVar('new_password');
         $confirmPass = $this->request->getVar('confirm_password');
 
         $data = $user->where('user_id', $user_id)->first();
-        
-        $oldPass = $data['user_password'];
 
-        if(password_verify($oldPass, $currentPass) && $newPass == $confirmPass) {
-            $user->update(password_hash($newPass, PASSWORD_DEFAULT));
+        if ($data) {
+            $oldPass = $data['user_password'];
+            $verify_pass = password_verify($currentPass, $oldPass);
+
+            if ($verify_pass) {
+                $user_password = ['user_password' => password_hash($newPass, PASSWORD_DEFAULT)];
+
+                $user->update($data, $user_password);
+
+                echo json_encode(array('success' => true, 'message' => 'Your password is successfully updated!'));
+            } else {
+                echo json_encode(array('success' => false, 'message' => 'Your password does not match!'));
+            }
+        } else {
+            echo json_encode(array('success' => false, 'message' => 'Your current password does not exists!'));
         }
         
+        
+
+        if(password_verify($oldPass, $currentPass) && $newPass == $confirmPass) 
+        $user->update($user_id, password_hash($newPass, PASSWORD_DEFAULT));
         echo json_encode([
             'success' => true,
             'message' => 'Your account is successfully updated!'
